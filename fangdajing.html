@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>放大镜</title>
+  <style type="text/css">
+  html,body,ul{margin:0px;padding:0px;}
+  #glass{height:465px;width:400px;border:1px solid #ddd;
+  margin:100px 0px 0px 100px;
+  position:relative;}
+  #glass .middleimg{
+  width:400px;
+  height:400px;
+  background:blue;
+  position:relative;}
+  #glass .middleimg .move{
+   width:150px;
+  height:150px;
+  display:none;
+  cursor:move;
+  background:url('images/move.png');
+  position:absolute;
+  top:0px;
+  left:0px;
+  }
+  #glass ul.list{
+  width:100%;height:50px;padding-top:5px;}
+  #glass ul.list li{width:50px;height:50px;list-style:none;float:left;margin:0px 7px;}
+  #glass ul.list li.current{
+  border:2px solid red;}
+  #glass .bigimg{
+  width:400px;
+  height:400px;
+  position:absolute;
+  top:0px;
+  left:400px;
+  background:red;
+  overflow:hidden;
+  display:none;}
+  #glass .bigimg .bimg{position:absolute; top:0px;left:0px;}
+  </style>
+ </head>
+ <body>
+  <div id="glass">
+    <div class="middleimg"><img src="images/big1.jpg" width="400" height="400" alt="tupian" class="mimg"/ >
+	   <div class="move"></div>
+	</div>
+    <ul class="list">
+	<li class="current"><img src="images/1.jpg" bigSrc="images/big1.jpg"/></li>
+	<li><img src="images/2.jpg" bigSrc="images/big2.jpg"/></li>
+	<li><img src="images/3.jpg" bigSrc="images/big3.jpg"/></li>
+	<li><img src="images/4.jpg" bigSrc="images/big4.jpg"/></li>
+	<li><img src="images/5.jpg" bigSrc="images/big5.jpg"/></li>
+	<li><img src="images/6.jpg" bigSrc="images/big6.jpg"/></li>
+	</ul>
+    <div class="bigimg"><img src="images/big1.jpg" class="bimg"/></div>
+  </div>
+  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript">
+    var oMove=$('#glass .middleimg .move');
+	var oBigimg=$('#glass .bigimg');
+   
+   $('#glass ul.list li').mouseover(function(){
+      $(this).addClass('current').siblings('li').removeClass('current');
+      var bigsrc=$(this).find('img').attr('bigSrc');   
+      $('#glass .middleimg img.mimg').attr("src",bigsrc);
+      $('#glass .bigimg img.bimg').attr("src",bigsrc);
+   });
+
+
+
+   $('#glass .middleimg').mouseout(function(){
+		oMove.hide();
+		oBigimg.hide();
+   });
+   $('#glass .middleimg').mouseover(function(e){
+		oMove.show();
+		oBigimg.show();
+       var x=e.clientX;
+	   var y=e.clientY;
+	   var _x=$('#glass .middleimg').offset().left;
+	   var _y=$('#glass .middleimg').offset().top;
+	   var w=oMove.width()/2;
+	   var h=oMove.height()/2;
+	   var _left=x-_x-w;
+	   var _top=y-_y-h;
+	   var maxleft=$('.middleimg').width()-w*2;
+	   var maxtop=$('.middleimg').height()-h*2;
+	   if(_left<0){_left=0;}//吸附原理
+	   if(_left>maxleft){_left=maxleft;}
+       if(_top<0){_top=0;}
+	   if(_top>maxtop){_top=maxtop;}
+	   oMove.css({"left":_left+"px","top":_top+"px"});
+       //放大比例
+	   var w_bi=_left/maxleft;
+	   var h_bi=_top/maxtop;
+	   var _width=w_bi*400;
+	   var _height=h_bi*400;
+	   $('#glass .bigimg img.bimg').css({"left":-_width+"px","top":-_height+"px"});
+   });
+  
+
+
+
+  </script>
+
+ </body>
+</html>
