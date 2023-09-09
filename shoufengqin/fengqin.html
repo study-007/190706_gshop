@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+   <style type="text/css">
+   *{margin:0px;padding:0px;}
+   body{
+   background:#434343;
+   }
+   #box{
+   width:1180px;/*1182*/
+   height:280px;
+   background:#990066;
+   margin:100px auto;
+   border:5px solid #fff;
+   overflow:hidden;
+   }
+   #box ul li{
+   width:196px;
+   height:280px;
+   list-style:none;
+   background:blue;
+   float:left;
+   border-right:1px solid #fff;
+   position:relative;
+   overflow:hidden;
+   transition:1s;/*动态变化*/}
+   #box ul{width:3000px;}
+   #box ul:hover li{width:40px;}
+   #box ul li:hover{
+   width:980px;
+   }
+   #box ul li:hover p{
+   height:40px;line-height:40px;}
+   #box ul li .course{
+    width:980px;
+   height:200px;
+   padding:40px 20px;}
+   #box ul li p{
+   width:100%;/*相对于父元素计算*/
+   height:100%;
+   position:absolute;
+   left:0px;
+   background:rgba(0,0,0,0.5);
+   color:#fff;
+   text-align:center;
+   line-height:280px;
+   transition:1s;}
+   p.first{
+    top:0px;}
+   p.second{
+   bottom:0px;}
+   #box ul li .course dl{
+     float:left; 
+	 width:210px;
+     height:190px;
+	 box-shadow:0px 0px 3px #fff;
+     margin:0 10px;
+
+   }
+   #box ul li .course dl dt{
+   padding:5px;}
+   #box ul li .course dl dd{
+   width:100%;
+     height:30px;
+	 background:rgba(0,0,0,0.5);
+	 color:#fff;
+   text-align:center;
+   line-height:30px;
+	 }
+   
+   </style>
+ </head>
+<body>
+ <div id="box">
+  <ul>
+   <li style="background:#0000cc">
+     <div class="course">
+	   <dl><!--自定义列表-->
+	     <dt><img src="images/c1.jpg"></dt>
+	     <dd>网页制作</dd>
+	   </dl>
+	   <dl><!--自定义列表-->
+	     <dt><img src="images/c2.jpg"></dt>
+	     <dd>JAVA开发</dd>
+	   </dl>
+	   <dl><!--自定义列表-->
+	     <dt><img src="images/c3.jpg"></dt>
+	     <dd>前端操作</dd>
+	   </dl>
+	   <dl><!--自定义列表-->
+	     <dt><img src="images/c4.jpg"></dt>
+	     <dd>ps教学</dd>
+	   </dl>
+	 </div>
+     <p class="first">IT培训</p>
+	 <p class="second">IT培训</p>
+   </li>
+   <li style="background:#00A0EA"><div class="course">
+   <dl><!--自定义列表-->
+	     <dt><img src="images/c1.jpg"></dt>
+	     <dd>网页制作</dd>
+	   </dl>
+	   <dl><!--自定义列表-->
+	     <dt><img src="images/c2.jpg"></dt>
+	     <dd>JAVA开发</dd>
+	   </dl>
+	   <dl><!--自定义列表-->
+	     <dt><img src="images/c3.jpg"></dt>
+	     <dd>前端操作</dd>
+	   </dl>
+	   <dl><!--自定义列表-->
+	     <dt><img src="images/c4.jpg"></dt>
+	     <dd>ps教学</dd>
+	   </dl></div>
+    <p class="first">IT培训</p>
+	 <p class="second">IT培训</p></li>
+   <li style="background:#660066"><div class="course"><dl><!--自定义列表-->
+	     <dt><img src="images/c1.jpg"></dt>
+	     <dd>网页制作</dd>
+	   </dl>
+	   <dl><!--自定义列表-->
+	     <dt><img src="images/c2.jpg"></dt>
+	     <dd>JAVA开发</dd>
+	   </dl>
+	   <dl><!--自定义列表-->
+	     <dt><img src="images/c3.jpg"></dt>
+	     <dd>前端操作</dd>
+	   </dl>
+	   <dl><!--自定义列表-->
+	     <dt><img src="images/c4.jpg"></dt>
+	     <dd>ps教学</dd>
+	   </dl></div>
+     <p class="first">IT培训</p>
+	 <p class="second">IT培训</p></li>
+   <li style="background:#cccc00"><div class="course">
+   <dl><!--自定义列表-->
+	     <dt><img src="images/c1.jpg"></dt>
+	     <dd>网页制作</dd>
+	   </dl>
+	   <dl><!--自定义列表-->
+	     <dt><img src="images/c2.jpg"></dt>
+	     <dd>JAVA开发</dd>
+	   </dl>
+	   <dl><!--自定义列表-->
+	     <dt><img src="images/c3.jpg"></dt>
+	     <dd>前端操作</dd>
+	   </dl>
+	   <dl><!--自定义列表-->
+	     <dt><img src="images/c4.jpg"></dt>
+	     <dd>ps教学</dd>
+	   </dl></div>
+    <p class="first">IT培训</p>
+	 <p class="second">IT培训</p></li>
+   <li style="background:#468856"><div class="course">
+   <dl><!--自定义列表-->
+	     <dt><img src="images/c1.jpg"></dt>
+	     <dd>网页制作</dd>
+	   </dl>
+	   <dl><!--自定义列表-->
+	     <dt><img src="images/c2.jpg"></dt>
+	     <dd>JAVA开发</dd>
+	   </dl>
+	   <dl><!--自定义列表-->
+	     <dt><img src="images/c3.jpg"></dt>
+	     <dd>前端操作</dd>
+	   </dl>
+	   <dl><!--自定义列表-->
+	     <dt><img src="images/c4.jpg"></dt>
+	     <dd>ps教学</dd>
+	   </dl></div>
+   <p class="first">IT培训</p>
+	 <p class="second">IT培训</p></li>
+   <li style="background:#EF4300"><div class="course">
+   <dl><!--自定义列表-->
+	     <dt><img src="images/c1.jpg"></dt>
+	     <dd>网页制作</dd>
+	   </dl>
+	   <dl><!--自定义列表-->
+	     <dt><img src="images/c2.jpg"></dt>
+	     <dd>JAVA开发</dd>
+	   </dl>
+	   <dl><!--自定义列表-->
+	     <dt><img src="images/c3.jpg"></dt>
+	     <dd>前端操作</dd>
+	   </dl>
+	   <dl><!--自定义列表-->
+	     <dt><img src="images/c4.jpg"></dt>
+	     <dd>ps教学</dd>
+	   </dl></div>
+    <p class="first">IT培训</p>
+	 <p class="second">IT培训</p></li>
+  </ul>
+  </div>  
+ </body>
+</html>
